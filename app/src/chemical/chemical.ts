@@ -56,6 +56,17 @@ export class MolecularFormula {
             }
         }
     }
+
+    get molarMass() : number {
+        return this.singleMolarMass * this.coefficient;
+    }
+
+    get singleMolarMass() : number {
+        return this.composition.reduce((i, c) => {
+            return i + c.molarMass;
+        },
+        0);
+    }
 }
 
 export class InvalidElement {

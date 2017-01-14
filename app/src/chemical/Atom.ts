@@ -21,4 +21,8 @@ export class Atom {
         return this.coefficient * this.element.molarMass;
     }
 
+    get singleMolarMass() {
+        return this.element.molarMass;
+    }
+
 }
