@@ -19,7 +19,5 @@ export function isLetter(str: string) : boolean {
 }
 
 export function isDecimalSeparator(str: string) : boolean {
-    console.log(str);
-    console.log(str === "." || str === ",");
     return str && (str === "." || str === ",");
 }
