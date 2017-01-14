@@ -21,7 +21,6 @@
   "author": "Greg Holguin <simulatedgreg@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/es6-promise": "0.0.32",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "babel-core": "^6.8.0",
     "babel-eslint": "^7.0.0",

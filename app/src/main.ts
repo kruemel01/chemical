@@ -1,9 +1,8 @@
-/// <reference path="../VueImport.ts" />
-
 import * as Vue from "vue";
 
 import * as App from "./App.vue";
-import { parseStatement, InputStream } from "./parser";
+import { parseStatement } from "./parser/parser";
+import InputStream from './parser/InputStream';
 
 new Vue({
     ...App,
