@@ -1,7 +1,7 @@
 import { StatementElement } from '../parser/interfaces';
 import InputStream from '../parser/InputStream';
 import { Atom } from './Atom';
-import { isNumeric, isDot, isLetter, isUpperCase, isLowerCase } from '../util';
+import { isNumeric, isLetter, isUpperCase, isLowerCase, isDecimalSeparator } from '../util';
 
 export class Operator {
 
@@ -37,7 +37,7 @@ export class MolecularFormula {
             let c = buf.read();
             if (isNumeric(c) && buf.pos === 1) {
                 let coefficientStr = c;
-                while (isNumeric(buf.peek()) || isDot(buf.peek())) {
+                while (isNumeric(buf.peek()) || isDecimalSeparator(buf.peek())) {
                     coefficientStr += buf.read();
                 }
                 this.coefficient = parseFloat(coefficientStr);

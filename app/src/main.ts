@@ -8,4 +8,4 @@ new Vue({
     ...App,
 }).$mount("#app");
 
-console.log(parseStatement(new InputStream("H2O+CO2--H3O")));
+console.log(parseStatement(new InputStream("N2 + 3H2 + 3.5O2 -- 2NO2 + 3H2O")));

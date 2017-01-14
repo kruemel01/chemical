@@ -1,4 +1,4 @@
-import { isUpperCase, isLowerCase, isAlphanumeric } from '../util';
+import { isUpperCase, isLowerCase, isAlphanumeric, isDecimalSeparator } from '../util';
 import { Operator, MolecularFormula, InvalidElement } from "../chemical/chemical";
 import InputStream from "./InputStream";
 import { StatementElement } from "./interfaces";
@@ -27,7 +27,9 @@ function readNext(buf: InputStream) : StatementElement {
         }
     } else if (isAlphanumeric(c)) {
         let stringRep = c;
-        while (isAlphanumeric(buf.peek())) {
+        let decimalPoint = false;
+        while (isAlphanumeric(buf.peek()) || (isDecimalSeparator(buf.peek()) && !decimalPoint)) {
+            if (isDecimalSeparator(buf.peek())) decimalPoint = true;
             stringRep += buf.read();
         }
         return new MolecularFormula(stringRep);

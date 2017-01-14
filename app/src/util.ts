@@ -18,6 +18,8 @@ export function isLetter(str: string) : boolean {
     return str && /^[a-zA-z]$/.test(str);
 }
 
-export function isDot(str: string) : boolean {
-    return str && /^\.$/.test(str);
+export function isDecimalSeparator(str: string) : boolean {
+    console.log(str);
+    console.log(str === "." || str === ",");
+    return str && (str === "." || str === ",");
 }
