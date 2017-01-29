@@ -48,6 +48,7 @@ export class MolecularFormula {
                 }
                 let coefficientStr = "";
                 while (isNumeric(buf.peek())) {
+                    // TODO: decimal point coefficient
                     coefficientStr += buf.read();
                 }
                 let coefficient = coefficientStr !== "" ? parseInt(coefficientStr) : 1;

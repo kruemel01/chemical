@@ -21,3 +21,20 @@ export function isLetter(str: string) : boolean {
 export function isDecimalSeparator(str: string) : boolean {
     return str && (str === "." || str === ",");
 }
+
+export function gcd(...rest: number[]) {
+    let a,b;
+    if (rest.length > 2) {
+        a = rest.shift();
+        b = gcd(...rest);
+    } else {
+        [a,b] = rest;
+    }
+    let h;
+    while (b !== 0) {
+        h = a % b;
+        a = b;
+        b = h;
+    }
+    return a;
+}

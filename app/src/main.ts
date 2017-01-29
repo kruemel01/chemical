@@ -5,6 +5,7 @@ import { parseStatement } from "./parser/parser";
 import InputStream from './parser/InputStream';
 import { StatementElement } from './parser/interfaces';
 import { MolecularFormula } from './chemical/chemical';
+import { gcd } from "./util";
 
 new Vue({
     ...App,
